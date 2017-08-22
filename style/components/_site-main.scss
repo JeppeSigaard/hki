@@ -1,0 +1,52 @@
+.site-main{
+    position: relative;
+    overflow: hidden;
+    margin-top: 70px;
+    padding: 25px 15px;
+    transition: padding 80ms;
+    
+    .widget-area{
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    @media(min-width: 480px){
+        padding: 30px 20px;
+    }
+    
+    @media(min-width: 640px){
+        padding: 40px 30px;
+    }
+    
+    @media(min-width: 769px){
+        display: inline-block;
+        vertical-align: top;
+        width: calc(100% - 280px);
+    }
+    
+    @media(min-width: 880px){
+        margin-top: 0px;
+        width: 100%;
+    }
+    
+    @media(min-width: 1080px){
+        width: calc(100% - 280px);
+    }
+    
+    @media(min-width: 1150px){
+        width: calc(100% - 320px);
+    }
+    
+     @media(min-width: 1280px){
+        width: calc(100% / 3 * 2);
+        
+    }
+    
+    @media(min-width: 1400px){
+        padding: 40px 40px 20px;
+    }
+    
+    @media(min-width: 1600px){
+        padding: 50px 50px 20px;
+    }
+}

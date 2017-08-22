@@ -1,0 +1,109 @@
+.contact-list{
+    padding: 15px;
+    text-align: center;
+    
+    .contact-card{
+        margin: 15px;
+        min-width: 260px;
+        display: inline-block;
+        vertical-align: top;
+        text-align: left;
+    }
+}
+
+.contact-card{
+    overflow: visible;
+    position: relative;
+    min-width: 200px;
+    padding: 0px 20px 20px;
+    margin-top: 30px;
+    @extend %font-size;
+    
+    &:before{
+        position: absolute;
+        content: '';
+        background: lighten($theme-color-10, 30);
+        top: 0px;
+        left: 0;
+        right: 20px;
+        bottom: 0;
+        z-index: 0;
+    }
+    
+    .contact-label {
+        display: inline-block;
+        position: relative;
+        color: white;
+        background: $theme-color-10;
+        position: relative;
+        height: 30px;
+        line-height: 30px;
+        text-transform: uppercase;
+        padding: 0px 15px;
+        font-size: 12px;
+        top: -30px;
+        left: -20px;
+        z-index: 2;
+        font-weight: bold;
+    }
+    
+    .contact-img{
+        top: -30px;
+        right: -20px;
+        width: 200px;
+        height: 130px;
+        display: inline-block;
+        float: right;
+        position: relative;
+        z-index: 1;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    
+    .contact-name{
+        min-width: 200px;
+        width: calc(100% - 200px);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        font-size: 125%;
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+    .contact-position{
+        min-width: 200px;
+        width: calc(100% - 200px);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        font-size: 90%;
+        font-weight: bold;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    
+    a{
+        min-width: 200px;
+        width: calc(100% - 200px);
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        height: 20px;
+        line-height: 20px;
+        margin-bottom: 10px;
+        font-size: 90%;
+    }
+    
+    a svg{
+        display: inline-block;
+        vertical-align: top;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        background: #333;
+        fill: lighten($theme-color-10, 30);
+        margin-right: 5px;
+        padding: 5px;
+    }
+}

@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <title><?php wp_title(' · ', true, 'right') ?></title>
-    <?php wp_head(); ?>
-</head>
-<body <?php body_class(); ?>>
-    <div id="page-wrapper"></div>
-    <?php wp_footer(); ?>
-</body>
-</html>
+<?php 
+
+$format = isset($_GET['format']) ? esc_attr($_GET['format']) : null ;
+if('json' === $format && !is_admin()){ get_template_part('json');}
+else{get_template_part('site');}

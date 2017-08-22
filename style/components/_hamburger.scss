@@ -1,0 +1,70 @@
+.template-home .hamburger{display: none;}
+
+.hamburger{
+    display: block;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background: $theme-color-8;
+    fill: white;
+    width: 53px;
+    height: 47px;
+    color: white;
+    
+    &.open{
+        display: none;
+    }
+    
+    svg{
+        display: block;
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 47px;
+        width: 50px;
+        padding: 0px 13px;
+        fill: #f9f9f9;
+        z-index: 2;
+        cursor: pointer;
+    }
+    
+    
+    
+    
+    .hamburger-label{
+        position: relative;
+        display: none;
+        padding: 0px 20px;
+        font-size: 13px;
+        height: 47px;
+        line-height: 47px;
+        margin-top: 0;
+        transition: margin-top 300ms, opacity 300ms;
+        transition-delay: 150ms;
+        overflow: hidden;
+        color: #333;
+        opacity: 1;
+        
+        span{
+            color: white;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            line-height: 1.2;
+            z-index:1;
+        }
+    }
+    
+    @media(min-width:640px){
+        
+        &.has-label{
+            width: 280px;
+        }
+    
+        .hamburger-label{
+            display: block;        
+        }
+    }
+    
+    @media(min-width:880px){display: none;}
+}

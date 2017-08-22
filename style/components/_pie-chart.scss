@@ -1,0 +1,302 @@
+.pie-chart-wrapper{
+    background: rgba(black,.02);
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+    overflow: auto;
+    padding-bottom: 40px;
+    display: block;
+    text-align: center;
+}
+
+.home-section .pie-chart-wrapper{
+    padding: 20px 40px;
+    max-width: 640px;
+    margin: auto;
+    background: transparent;
+    
+    .pie-chart-header{
+        padding: 0px 20px 0px;
+    }
+}
+
+.pie-chart-header{
+    padding: 30px 20px 0px;
+    @extend %font-size;
+    
+    h3{font-size: 150%;line-height: 1.2;}
+}
+
+.pie-chart-footer{
+    padding: 20px 20px 0px;
+    @extend %font-size;
+    text-align: center;
+    
+    a{font-size: 80%; color: rgba(black,.8);}
+}
+
+.pie-chart-container{
+    padding: 30px 20px 0px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    min-width: 50%;
+    vertical-align: top;
+}
+
+.pie-chart-prev-next{
+    display: block;
+    text-align: center;
+    font-size: 0;
+    padding: 20px 0px;
+    
+    a{
+        display: inline-block;
+        margin: 0px 10px;
+        width: 40px;
+        height: 40px;
+        background: $theme-color-2;
+        fill: white;
+        padding: 8px;
+        border-radius: 30px;
+        opacity: .8;
+        
+        &:hover{
+            opacity: .9;
+        }
+        
+        &:active{
+            opacity: 1;
+        }
+    }
+    
+}
+
+.pie-chart{
+    display: block;
+    margin: auto; 
+    position: relative;
+    width: 200px;
+    height: 200px;
+    //padding-bottom: 100%;
+    border-radius: 100%;
+    background: #f0f0f0;
+    overflow: hidden;
+    transform-origin:center;
+    transform: rotate(-45deg);
+    opacity: 0;
+    transition: opacity 400ms, transform 400ms;
+    
+    &.ready{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    
+    &.unready{
+        .slice{
+            transform: rotate(0deg)!important;
+        }
+        .slice .cover-1 {
+            transform: rotate(0deg)!important;
+        }
+    }
+}
+
+.pie-chart-index-container{
+    padding: 30px 20px 0px;
+    vertical-align: top;
+    min-width: 50%;
+    display: inline-block;
+    text-align: center;
+}
+
+.large-text .pie-chart-index-list li strong{width: 60px;}
+
+.pie-chart-index-list{
+    display: inline-block;
+    text-align: left;
+    @extend %font-size;
+    
+    li{
+        line-height: 1.5;
+        display: block;
+        position: relative;
+        margin-bottom: 10px;
+        padding-left: 25px;
+    
+        &:before{
+            content: '';
+            display: block;
+            position: absolute;
+            top: .15rem;
+            left: 0; 
+            height: 16px;
+            width: 16px;
+        }
+        
+        strong{
+            display: inline-block;
+            white-space: nowrap;
+            margin-right: 5px;
+            text-align: right;
+        }
+    }
+}
+
+.slice {
+    position:absolute;
+    width:50%;
+    height:100%;
+    overflow:hidden;
+    left:50%;
+    -moz-transform-origin:left center;
+    -ms-transform-origin:left center;
+    -o-transform-origin:left center;
+    -webkit-transform-origin:left center;
+    transform-origin:left center;
+    transition: transform 500ms;
+}
+
+.slice.gt-50 {
+    width:100%;
+    height:100%;
+    left:0px;
+    -moz-transform-origin:center center;
+    -ms-transform-origin:center center;
+    -o-transform-origin:center center;
+    -webkit-transform-origin:center center;
+    transform-origin:center center;
+}
+
+.slice .cover-1 {
+    position:absolute;
+    width:100%;
+    height:100%;
+    left:-100%;
+    -moz-transform-origin:right center;
+    -ms-transform-origin:right center;
+    -o-transform-origin:right center;
+    -webkit-transform-origin:right center;
+    transform-origin:right center;
+    border-right: 2px solid #f0f0f0;
+    transition: transform 500ms;
+}
+
+.slice.gt-50 .cover-1 {
+    width: 50%;
+    left:0px;
+}
+
+.slice.gt-50 .cover-2 {
+    position:absolute;
+    width:50%;
+    height:100%;
+    left:50%;
+}
+
+.pin-chart-container{
+    width: 100%;
+    padding: 20px 40px;
+}
+.pin-chart{
+    display: block;
+    margin: auto; 
+    position: relative;
+    border-left: 3px solid #333;
+    padding-left: 5px;
+    padding-bottom: 10px;
+    opacity: 1;
+    transition: opacity .4s;
+    
+    .pin{
+        overflow: hidden;
+        margin:15px 0px;
+        @extend %font-size;
+        text-align: left;
+        
+        
+        strong {
+            display: block;
+            margin-right: 5px;
+            height: 30px;
+            line-height: 30px;
+            text-align: right;
+            padding: 0px 10px 0px 0px;
+            white-space: nowrap;
+            transition: width 600ms;
+            font-size: 90%;
+        }
+        
+        span{
+            display: block;
+            margin-bottom: 5px;
+        }
+    }
+    
+    &.unready {
+        opacity: 0;
+        .pin strong{
+            width: 0%!important;
+        }
+    }
+}
+
+.slice:nth-child(1) .cover-1,
+.slice:nth-child(1) .cover-2,
+.pie-chart-index-list li:nth-child(1):before,
+.pin-chart .pin:nth-child(1) strong{
+    background-color:$theme-color-11;	
+}
+.slice:nth-child(2) .cover-2,
+.slice:nth-child(2) .cover-1,
+.pie-chart-index-list li:nth-child(2):before,
+.pin-chart .pin:nth-child(2) strong{
+    background-color:$theme-color-1;	
+}
+.slice:nth-child(3) .cover-2,
+.slice:nth-child(3) .cover-1,
+.pie-chart-index-list li:nth-child(3):before,
+.pin-chart .pin:nth-child(3) strong{
+    background-color:$theme-color-4;	
+    color: white;
+}
+
+.slice:nth-child(4) .cover-2,
+.slice:nth-child(4) .cover-1,
+.pie-chart-index-list li:nth-child(4):before,
+.pin-chart .pin:nth-child(4) strong{
+    background-color:$theme-color-7;
+    color: white;
+}
+
+.slice:nth-child(5) .cover-2,
+.slice:nth-child(5) .cover-1,
+.pie-chart-index-list li:nth-child(5):before,
+.pin-chart .pin:nth-child(5) strong{
+    background-color:$theme-color-2;
+    color: white;
+}
+
+.slice:nth-child(6) .cover-2,
+.slice:nth-child(6) .cover-1,
+.pie-chart-index-list li:nth-child(6):before,
+.pin-chart .pin:nth-child(6) strong{
+    background-color:$theme-color-9;
+    color: white;
+}
+
+.slice:nth-child(7) .cover-2,
+.slice:nth-child(7) .cover-1,
+.pie-chart-index-list li:nth-child(7):before,
+.pin-chart .pin:nth-child(7) strong{
+    background-color:$theme-color-5;
+    color: white;
+}
+
+.slice:nth-child(8) .cover-2,
+.slice:nth-child(8) .cover-1,
+.pie-chart-index-list li:nth-child(8):before,
+.pin-chart .pin:nth-child(8) strong{
+    background-color:$theme-color-8;
+    color: white;
+}

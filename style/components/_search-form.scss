@@ -1,0 +1,117 @@
+$search-form-height: 45px;
+
+.search-form{
+    padding: 30px 0px 33px;
+    position: relative;
+    background: #f0f0f0;
+    border-top: 1px solid rgba(black,.1);
+    max-width: 280px;
+    margin-left: auto;
+    top: -47px;
+    display: none;
+    
+    &.hamburger_active{
+        display: block;
+
+    }
+    
+    @media(min-width:880px){
+        top: 0px;
+        display: block;
+    }
+    
+    @media(min-width: 1050px){
+         max-width: 320px;
+    }
+    
+    &:after{
+        content: '';
+        position: absolute;
+        @extend %color-line;
+        bottom: 0px;
+        height: 3px;
+        left: 0;
+        right: 0;
+    }
+    
+    fieldset{
+        position: relative;
+        padding: 0px;
+        margin: 0px 20px;
+        border-radius: 5px;
+        overflow: hidden;
+    }
+    
+    .search-label{display: none;}
+    
+    .search-input{
+        display: block;
+        width: 100%;
+        height: $search-form-height;
+        line-height: $search-form-height;
+        border: none;
+        outline: none;
+        -webkit-appearance: none;
+        background: $theme-color-5;
+        color: white;
+        font-size: 13px;
+        padding: 0px 15px;
+        
+        opacity: .8;
+        transition: opacity 120ms;
+
+        &:focus{
+
+            opacity: 1;
+        }
+    }
+    
+    .search-input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: white;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .search-input::-moz-placeholder { /* Firefox 19+ */
+        color: white;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .search-input:-ms-input-placeholder { /* IE 10+ */
+        color: white;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    .search-input:-moz-placeholder { /* Firefox 18- */
+        color: white;
+        font-weight: normal;
+        font-size: 13px;
+    }
+    
+    .search-submit{
+        -webkit-appearance: none;
+        border: none;
+        outline: none;
+        position: absolute;
+        width: $search-form-height * 1.1;
+        height: $search-form-height;
+        right: 0px;
+        top: 0;
+        color: transparent;
+        background: transparent;
+        cursor: pointer;
+    }
+    
+    .search-icon{
+        pointer-events: none;
+        vertical-align: none;
+        position: absolute;
+        border-radius: 100%;
+        background: white;
+        right: 9px;
+        top: 12px;
+        height: 22px;
+        width: 22px;
+        padding: 3px;
+        fill: $theme-color-5;
+    }
+}

@@ -1,4 +1,4 @@
 // Globals
 const HookHandler = require( '../underscore/underscore_hookhandler.js' );
-var global = { hooks : new HookHandler() };
-module.exports = global;
+var Globals = { hooks : new HookHandler() };
+module.exports = Globals;

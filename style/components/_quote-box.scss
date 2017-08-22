@@ -1,0 +1,57 @@
+.quote-box{
+    @extend %font-size;
+    position: relative;
+    
+    .quote-box-icon{
+        height: 30px;
+        width: 30px;
+        margin-bottom: 5px;
+        fill: $theme-color-11;
+    }
+    
+    .quote-box-image{
+        height: 100px;
+        width: 150px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat; 
+        float: right;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+    
+    .quote-box-title{
+        display: block;
+        color: $theme-color-4;
+        font-weight: bold;
+        line-height: 1.3;
+        padding: 10px 0px;
+        font-size: 110%;
+        border-top: 2px solid $theme-color-11;
+        
+        &.has-img{
+            width: calc(100% - 160px);
+        }
+    }
+    
+    .quote-box-content{
+        line-height: 1.5;
+    }
+    
+    .quote-box-footer{
+        font-size: 90%;
+        text-align: right;
+        clear: both;
+        color: $theme-color-4;
+        padding: 10px 0px;
+        border-bottom: 2px solid $theme-color-11;
+        
+        .quote-box-name{
+            font-weight: bold;
+        }
+        
+        .quote-box-position{
+            &:before{ content: ' · ';}
+        }
+    }
+}

@@ -7,7 +7,7 @@
 
         set: ( key, value, expireDays ) => {
 
-            const val = (typeof value === 'object' || typeof === 'array') ? encodeURIComponent(value) : value;
+            const val = (typeof value === 'object' || typeof value === 'array') ? encodeURIComponent(value) : value;
 
             let d = new Date(); d.setTime( d.getTime() + expireDays*24*60*60*1000 );
             document.cookie = key+'='+val+';expires='+d.toUTCString()+';path=/;';

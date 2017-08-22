@@ -1,0 +1,149 @@
+.home-section{
+    @extend %font-size;
+    position: relative;
+    padding:30px 0px 40px;
+    overflow: hidden;
+    flex-grow: 1;
+    width: 100%;
+    
+    &:before{
+        opacity: .5;
+        content: '';
+        position:absolute;
+        height: 3px;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        @extend %color-line;
+    }
+    
+    &:nth-child(3n+1){
+        background: #f9f9f9;
+    }
+    
+    &:nth-child(3n+2){
+        background: #f5f5f5;
+    }
+    
+    @media(min-width:480px){
+        padding:40px 0px 50px;
+    }
+    
+    @media(min-width:640px){
+        padding:50px 0px 60px;
+    }
+    
+    @media(min-width: 769px){
+        padding:30px 0px 40px;
+        vertical-align: top;
+        width: 50%;
+        
+        &:before{
+            background-size: 200%;
+        }
+        
+        
+        &:nth-child(2n):before{
+            background-position: 100%;
+        }
+        
+        &.size-full{
+            width: 100%;
+            
+            &:before{
+                background-size: 100%;
+            }
+        }
+    }
+    
+    @media(min-width:960px){
+        padding:40px 0px 50px;
+    }
+    
+    @media(min-width:1050px){
+        padding:50px 0px 60px;
+    }
+    
+    .section-heading{
+        text-align: center;
+        font-size: 175%;
+    }
+    
+    .post-list-wrapper,
+    .post-article,
+    .quote-container{
+        padding: 0px 30px;
+        max-width: 540px;
+        margin: 0px auto;
+    }
+}
+
+.home-section.home-section-form{
+    background: $theme-color-4;
+    color: white;
+    padding: 60px 40px;
+    .home-section-form-inner{
+        max-width: 300px;
+        margin: auto;
+        @extend %font-size;
+    }
+    
+    .smamo-form-wrapper{
+        background: transparent;
+        color: white;
+        form{}
+        
+        &:before{display: none;}
+        
+        form fieldset label{
+            color: white;    
+        }
+        
+        form fieldset input,
+        form fieldset.has-content input,
+        form fieldset.error input{
+            color: white;
+            border-bottom-color: white;
+        }
+        
+        form fieldset.submit{
+            text-align: center;
+        }
+        
+        form fieldset input[type="submit"]{
+            background: darken($theme-color-4,20);
+            border-bottom-color: transparent;
+            
+            &:focus{
+                background:darken($theme-color-4, 15);
+                border: 1px solid darken($theme-color-4, 20);
+                border-bottom-color: darken($theme-color-4, 20);
+            }
+        }
+        
+        form fieldset input[type="checkbox"]{
+            
+            &:after{
+                background: $theme-color-4;
+                border:1px solid rgba(white,.5);
+            }
+
+            &:focus:after,
+            &:checked:focus:after{
+                border:1px solid white;
+            }
+
+            &:checked:after{
+                border:1px solid white;
+                background: white;
+                color: #666;
+            }
+            
+        }
+    }
+    
+    h3{
+        padding: 10px;
+        font-size: 140%;
+    }
+}

@@ -1,0 +1,47 @@
+.site-logo{
+    display: block;
+    padding: 8px 20px;
+    height: 47px;
+    white-space: nowrap;
+    
+    .logo-img{
+        height: 30px;
+        width: auto;
+        display: inline-block;
+        vertical-align: top;
+    }
+    
+    .logo-description{
+        font-size: 10px;
+        display: inline-block;
+        vertical-align: bottom;
+        font-weight: bold;
+        font-style: italic;
+        color: $theme-color-4;
+    }
+    
+    &.negative{
+        .logo-description{color: white;}
+    }
+}
+
+.template-home .site-logo,
+.site-footer .site-logo{
+    height: auto;
+    max-width: 260px;
+    margin: auto;
+    
+    .logo-img{
+        display: block;
+        height: auto;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .logo-description{
+        display: block;
+        font-size: 15px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+}

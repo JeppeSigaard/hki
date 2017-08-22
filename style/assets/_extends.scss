@@ -1,0 +1,87 @@
+%fill-all{
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+}
+
+%no-margin{
+    margin:0;
+}
+
+%article-font-style{
+    line-height:$base-line-height;
+
+}
+
+%font-size{
+    font-size:$base-font-size;
+    transition:font-size .1s;
+    @media only screen and(min-width:480px){font-size:$base-font-size-480;}
+    @media only screen and(min-width:640px){font-size:$base-font-size-640;}
+    @media only screen and(min-width:768px){font-size:$base-font-size-768;}
+    @media only screen and(min-width:960px){font-size:$base-font-size-960;}
+}
+
+.large-text %font-size{
+    font-size:$base-font-size * 1.2;
+    @media only screen and(min-width:480px){font-size:$base-font-size-480 * 1.2;}
+    @media only screen and(min-width:640px){font-size:$base-font-size-640 * 1.2;}
+    @media only screen and(min-width:768px){font-size:$base-font-size-768 * 1.2; }
+    @media only screen and(min-width:960px){font-size:$base-font-size-960 * 1.2;}
+}
+
+%fill-bg{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+%base-font{
+    font-family: $base-font;
+}
+
+
+%loading{
+    
+    &:before{
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 20;
+        background-color: white;
+    }
+    
+    &:after{
+        z-index: 21;
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url(statics/loading_panes.gif);
+        background-size: 100% 100%;
+        opacity: .5;
+    }
+}
+
+
+%color-line{
+    background: linear-gradient(90deg,
+        $theme-color-1 0%, $theme-color-1 10%, 
+        $theme-color-2 10%, $theme-color-2 20%, 
+        $theme-color-3 20%, $theme-color-3 30%,  
+        $theme-color-4 30%, $theme-color-4 40%,  
+        $theme-color-5 40%, $theme-color-5 50%, 
+        $theme-color-6 50%, $theme-color-6 60%,
+        $theme-color-7 60%, $theme-color-7 70%,
+        $theme-color-8 70%, $theme-color-8 80%,
+        $theme-color-9 80%, $theme-color-9 90%,
+        $theme-color-10 90%, $theme-color-10 100%  
+    );
+}

@@ -1,0 +1,25 @@
+.widget-area{
+    background-color: inherit;
+    position: relative;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 100ms;
+    
+    &.loading{
+        transition-duration: 200ms;
+        opacity: .7;
+    }
+}
+
+.widget{
+    background-color: inherit;
+    margin-bottom: 40px;
+    overflow: auto;
+    
+    opacity: 1;
+    transition: opacity 120ms;
+    
+    &.loading{
+        opacity: .8;
+    }
+}

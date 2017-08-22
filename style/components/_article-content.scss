@@ -1,0 +1,126 @@
+@keyframes show_image{
+    from{opacity: 0; left: 25%;}
+    to{opacity: 1; left: 0%;}
+}
+
+@keyframes hide_image{
+    from{opacity: 1; left: 0%;}
+    to{opacity: 0; left: 25%;}
+}
+
+.post-article{
+    position: relative;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 50ms;
+    
+    &.loading{
+        transition-duration: 200ms;
+        opacity: .5;
+    }
+}
+
+.article-header{
+    @extend %font-size;
+    opacity: 1;
+    transition: opacity 120ms;
+    
+    .header-image-wrapper{
+        position: relative;
+        z-index: 1;
+        margin-bottom: 20px;
+        
+        &:before{
+            position: absolute;
+            top: 25%;
+            width: 100%;
+            height: 15%;
+            z-index: 1;
+            background: $theme-color-8;
+            content: '';
+        }
+    }
+    
+    .header-image{
+        width: 75%;
+        position: relative;
+        z-index: 2;
+        left: 0;
+        opacity: 1;
+        animation-timing-function: cubic-bezier(0, .5, .5, 1);
+        //animation: show_image forwards 1 500ms;
+    }
+    
+    .post-title{margin-bottom: 20px; line-height: 1.2;font-size: 200%;}
+}
+
+.type-post .article-header{
+    .header-image-wrapper:before{background-color: $theme-color-7;}
+    .post-date {color:$theme-color-7}
+    .post-title {color:$theme-color-7}
+}
+
+.type-case .article-header{
+    
+    .header-image-wrapper{
+        margin: 0;
+        padding-top: 20px;
+        
+        
+        &:before{
+            top: 0;
+            left: 0;
+            right: 15%;
+            bottom: 20px;
+            width: auto;
+            height: auto;
+            z-index: 1;
+            background: rgba($theme-color-3,.2);
+            content: '';
+        }
+        
+    }
+    
+    .header-image{
+        width:85%;
+        margin-top: 0px;
+        margin-left: auto;
+        margin-right: 0;
+        display: block;
+    }
+    
+    .post-title{
+        display: block;
+        padding: 20px;
+        background: $theme-color-3;
+        color: white;
+        font-size: 150%;
+    }
+}
+
+.article-content{
+    opacity: 1;
+    //transition: opacity 250ms;
+    //transition-delay: 250ms;
+    position: relative;
+    z-index: 1;
+    @extend %font-size;
+    padding-bottom: 30px;
+    
+    .content-box{
+        margin: .7rem 0 .7rem;
+        padding: 20px;
+        background: #f0f0f0;
+        border-radius: 3px;
+        
+        .content-box-heading{
+            margin-top: 0;
+        }
+    }
+}
+
+.article-footer{
+    width: 200px;
+}

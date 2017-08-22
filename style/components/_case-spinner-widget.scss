@@ -1,0 +1,94 @@
+.case-widget,
+.spinner-item{
+    position: relative;
+    display: block;
+    padding-bottom: 20px;
+    width: 100%;
+    
+    .case-widget-label,
+    .spinner-item-label{
+        color: white;
+        background: $theme-color-3;
+        display: inline-block;
+        color: #fff;
+        position: relative;
+        height: 30px;
+        line-height: 30px;
+        text-transform: uppercase;
+        padding: 0 15px;
+        font-size: 12px;
+        font-weight: 700;
+    }
+    
+    .case-widget-img,
+    .spinner-item-img{
+        position: relative;
+        height: 0px;
+        background-color: #d0d0d0;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        z-index: 1;
+        
+        padding-bottom: 75%;
+        @media(min-width: 480px){padding-bottom: 60%;}
+        @media(min-width: 768px){padding-bottom: 50%;}
+        @media(min-width: 840px){padding-bottom: 65%;}
+        
+        &:before{
+            content: '';
+            position: absolute;
+            top: -20px;
+            height: 20px;
+            right: 20px;
+            width: 60px;
+            background: rgba($theme-color-3,.2);
+        }
+        
+        &:after{
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            height: 20px;
+            right: 20px;
+            width: 60px;
+            background: rgba($theme-color-3,.2);
+        }
+    }
+    
+    .case-widget-title,
+    .spinner-item-title{
+        width: 75%;
+        position: absolute;
+        @extend %font-size;
+        padding: 15px;
+        color: white;
+        background: $theme-color-3;
+        display: inline-block;
+        line-height: 1.2;
+        bottom: 0px;
+        z-index: 2;
+        left: 0;
+    }
+}
+
+.case-spinner-widget,
+.home-spinner{
+    padding-bottom: 30px;
+    
+    .flickity-page-dots{
+        text-align: right;
+        padding: 0px;
+        bottom: 0;
+        right: 0;
+        
+        .dot{
+            border-radius: 0;
+            margin: 0px 5px;
+            height: 12px;
+            width: 12px;
+            background: $theme-color-3;
+        }
+        
+    }
+}

@@ -1,0 +1,49 @@
+.site-aside{
+    padding: 25px 15px;
+    transition: padding 80ms;
+    
+    @media(min-width: 480px){
+        padding: 30px 20px;
+    }
+    
+    @media(min-width: 640px){
+        padding: 30px;
+    }
+    
+    @media(min-width: 769px){
+        display: inline-block;
+        vertical-align: top;
+        width: 280px;
+        margin-top: 70px;
+        padding: 30px 30px 20px 0px;
+    }
+        
+    @media(min-width: 880px){
+        width: 100%;
+        margin-top: 0px;
+        padding: 40px;
+    }
+    
+    @media(min-width: 1080px){
+        width: 280px;
+        min-height: 100vh;
+        padding: 30px 30px 20px 0px;
+    }
+    
+    @media(min-width: 1150px){
+        width:  320px;
+    }
+    
+    @media(min-width: 1280px){
+        width: calc(100% / 3);
+       
+    }
+    
+    @media(min-width: 1400px){
+         padding: 40px 40px 20px 0px;
+    }
+    
+    @media(min-width: 1600px){
+         padding: 50px 50px 20px 0px;
+    }
+}

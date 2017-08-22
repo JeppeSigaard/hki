@@ -1,0 +1,111 @@
+.post-list-wrapper{
+    font-size: 0;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 0;
+    filter: grayscale(0);
+    transition-property: filter, -webkit-filter;
+    transition-duration: 0ms;
+    
+    &.loading{
+        transition-duration: 1000ms;
+        filter: grayscale(1);
+    }
+}
+
+.post-list-label{
+    text-transform: uppercase;
+    font-size: 13px;
+    height: 30px;
+    line-height: 30px;
+    padding: 0px 10px;
+    background: $theme-color-7;
+    color: white;
+    display: inline-block;
+}
+
+.post-list-more{
+    font-size: 12px;
+    line-height: 1;
+    margin-top: 10px;
+}
+
+
+.type-post .post-list, .type-any .post-list{
+    color: $theme-color-7;
+    @extend %font-size;
+    line-height: 1;
+    display: block;
+    
+    &:after{
+        content: '';
+        display: block;
+        height: 3px;
+        @extend %color-line;
+        margin-bottom: 10px;
+
+    }
+
+    .post-list-item{
+        margin-top: 10px;
+        position: relative;
+        
+        &:before{
+            content: '';
+            display: block;
+            height: 3px;
+            @extend %color-line;
+            margin-bottom: 10px;
+
+        }
+    }
+
+    .post-list-img{
+        margin-bottom: 10px;
+        display: block;
+        height: 150px;
+        background-color: $theme-color-7;
+        width: 200px;
+        position: static;
+        
+        &:after{
+            content: '';
+            position: absolute;
+            background-color: $theme-color-7;
+            right: 0px;
+            left: 200px;
+            top: 60px;
+            height: 30px;
+            opacity: .5;
+        }
+    }
+
+    .post-list-date{
+        display: block;
+        font-size: 80%;
+        margin-bottom: 5px;
+    }
+
+    .post-list-title{
+        display: block;
+        font-size: 125%;
+        line-height: 1.2;
+        margin-bottom: 20px;
+    }
+}
+
+.type-case .post-list,
+.type-contact .post-list{
+    margin: 0px -15px;
+    
+    li{
+        padding: 15px;
+        display: inline-block;
+        width: 100%;
+        @media(min-width: 600px){width: 50%;}
+        @media(min-width: 768px){width: 100%;}
+        @media(min-width: 840px){width: 50%;}
+        @media(min-width: 1080px){width: 100%;}
+        @media(min-width: 1280px){width: 50%;}
+    }
+}
